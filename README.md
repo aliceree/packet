@@ -1,4 +1,4 @@
-The information used in this game comes from Khan Academy, specifically from this lesson: 'https://www.youtube.com/watch?v=aD_yi5VjF78'.
+The information used in this game comes from Khan Academy, specifically from this lesson: https://www.youtube.com/watch?v=aD_yi5VjF78.
 
 # video transcript
 
