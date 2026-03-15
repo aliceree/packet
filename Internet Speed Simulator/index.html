@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No Limits Internet Speed</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main class="stage">
+      <section class="simulation-layout" aria-label="Simulace rychlosti internetu">
+        <aside class="side-controls">
+          <div class="control-group">
+            <button class="segmented segmented--single segmented__button segmented__button--signal" id="signalSelector" type="button" aria-label="Síla signálu">
+              <span class="signal-bars signal-bars--1" id="signalBars" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+          </div>
+          <div class="control-group control-group--vertical">
+            <button class="segmented segmented--single segmented__button segmented__button--tech" id="technologySelector" type="button" aria-label="Technologie připojení">EDGE</button>
+          </div>
+        </aside>
+
+        <div class="orbit-panel">
+          <div class="orbit-panel__glow"></div>
+          <div class="orbit">
+            <div class="orbit__track"></div>
+            <div class="orbit__meme" id="meme">
+              <img src="troll face meme.jpg" alt="TrollFaceMeme">
+            </div>
+            <div class="orbit__center">
+              <button class="boost-hitbox" id="boostButton" type="button" aria-label="Klikni pro zrychlení">
+                <span class="sr-only">Klikni pro zrychlení</span>
+              </button>
+              <div class="orbit__stats">
+                <div class="orbit__stat-group">
+                  <p class="orbit__label">SPEED:</p>
+                  <p class="orbit__value"><span id="speedValue">0.000</span> Mb/s</p>
+                </div>
+                <div class="orbit__stat-group">
+                  <p class="orbit__label">TECH:</p>
+                  <p class="orbit__value"><span id="technologyValue">EDGE</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="side-hint" aria-label="Instrukce">
+          <p>Click the center of the circle to accelerate.</p>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

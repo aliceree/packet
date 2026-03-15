@@ -1,0 +1,194 @@
+:root {
+  --bg-top: #f4eee2;
+  --bg-bottom: #dfe8d5;
+  --panel: rgba(255, 252, 244, 0.8);
+  --panel-border: rgba(61, 53, 38, 0.08);
+  --text: #2b2a24;
+  --muted: #666252;
+  --thread: #25231e;
+  --thread-preview: rgba(37, 35, 30, 0.35);
+  --node: #fffdf7;
+  --node-stroke: rgba(37, 35, 30, 0.28);
+  --node-active: #f05b3f;
+  --node-complete: #12110f;
+  --shadow: 0 18px 40px rgba(54, 49, 34, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.68), transparent 28%),
+    linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+button,
+canvas {
+  touch-action: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(1100px, 100%);
+  padding: 28px;
+  border-radius: 28px;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+}
+
+.hud {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 0;
+}
+
+.badge span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.badge strong {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+#reset-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font: inherit;
+  color: #fffdf7;
+  background: #23211d;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(35, 33, 29, 0.2);
+  pointer-events: auto;
+}
+
+#reset-button:hover {
+  background: #11100e;
+}
+
+.board-wrap {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(245, 245, 236, 0.45)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(68, 64, 52, 0.025),
+      rgba(68, 64, 52, 0.025) 1px,
+      transparent 1px,
+      transparent 64px
+    );
+  border: 1px solid rgba(61, 53, 38, 0.08);
+}
+
+.node-tooltip {
+  position: absolute;
+  z-index: 3;
+  display: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(35, 33, 29, 0.9);
+  color: #fffdf7;
+  font-size: 0.82rem;
+  line-height: 1;
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 10px));
+  white-space: nowrap;
+}
+
+.node-tooltip.is-visible {
+  display: block;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: min(68vh, 620px);
+}
+
+.hint {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+  margin: 0;
+  min-height: 1.5em;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .panel {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .hud {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hint {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    font-size: 0.92rem;
+  }
+
+  .badge strong {
+    font-size: 0.92rem;
+  }
+
+  #reset-button,
+  .badge {
+    pointer-events: auto;
+  }
+
+  #game-canvas {
+    height: min(62vh, 520px);
+  }
+}

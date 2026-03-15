@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Packet Melody</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel">
+        <div class="board-wrap">
+          <div class="hud">
+            <div class="badge">
+              <strong id="progress-label">Klient zatím nedokáže kontaktovat server.</strong>
+            </div>
+            <button id="reset-button" type="button">Reset</button>
+          </div>
+          <div class="node-tooltip" id="node-tooltip" role="tooltip" aria-hidden="true">klient</div>
+          <canvas id="game-canvas" aria-label="Herni plocha s body a vlaknem"></canvas>
+          <p class="hint" id="status-text">
+            Kliknutím na libovolného klienta jej lze propojit s některým z routerů. Spojení však nesmí překrývat nepřipojený router.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
